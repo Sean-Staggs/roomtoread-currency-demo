@@ -44,12 +44,12 @@
 
   var CSS = "\
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap');\
-.sz-backdrop{position:fixed;inset:0;z-index:2147483000;background:rgba(17,24,39,.62);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 16px;opacity:0;transition:opacity .25s ease;font-family:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased;overflow-y:auto}\
+.sz-backdrop{position:fixed;inset:0;z-index:2147483647;background:rgba(17,24,39,.62);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:24px 16px;opacity:0;transition:opacity .25s ease;font-family:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased;overflow-y:auto}\
 .sz-backdrop.sz-in{opacity:1}\
 .sz-backdrop.sz-handoff{background:rgba(17,24,39,.62);transition:opacity .35s ease .15s}\
 .sz-close{position:fixed;top:14px;right:14px;width:28px;height:28px;border-radius:50%;border:0;background:#fff;color:#1f2937;font-size:18px;line-height:28px;cursor:pointer;box-shadow:0 1px 3px rgba(0,0,0,.25);padding:0}\
 .sz-close:hover{background:#f3f4f6}\
-.sz-modal{display:flex;width:960px;max-width:100%;min-height:640px;background:#fff;border-radius:16px;padding:8px;gap:8px;box-shadow:0 20px 50px rgba(0,0,0,.35);transform:translateY(12px) scale(.98);transition:transform .3s cubic-bezier(.2,.8,.2,1),opacity .3s ease;opacity:0}\
+.sz-modal{flex-shrink:0;margin-top:auto;display:flex;width:960px;max-width:100%;min-height:640px;background:#fff;border-radius:16px;padding:8px;gap:8px;box-shadow:0 20px 50px rgba(0,0,0,.35);transform:translateY(12px) scale(.98);transition:transform .3s cubic-bezier(.2,.8,.2,1),opacity .3s ease;opacity:0}\
 .sz-in .sz-modal{transform:none;opacity:1}\
 .sz-modal.sz-out{transform:scale(.96);opacity:0;transition:transform .32s cubic-bezier(.4,0,.2,1),opacity .28s ease}\
 .sz-left{flex:1 1 0;display:flex;flex-direction:column;min-width:0}\
@@ -57,7 +57,7 @@
 .sz-story{padding:22px 24px 16px;display:flex;flex-direction:column;flex:1;color:#1f2937}\
 .sz-logo{width:56px;height:auto;margin-bottom:18px}\
 .sz-story h2{font-size:22px;font-weight:600;margin:0 0 12px;letter-spacing:-.01em;color:#111827}\
-.sz-story p{font-size:15px;line-height:1.5;margin:0;color:#374151}\
+.sz-story p{font-size:15px;line-height:1.5;margin:0;color:#1f2937}\
 .sz-links{margin-top:auto;padding-top:20px;font-size:12px;color:#4b5563}\
 .sz-links a{color:#4b5563;text-decoration:underline;text-underline-offset:2px}\
 .sz-right{flex:0 0 380px;border:1px solid #e5e7eb;border-radius:12px;padding:24px 24px 18px;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(0,0,0,.04)}\
@@ -75,10 +75,10 @@
 .sz-name{display:block;font-size:12px;color:#6b7280;margin-top:1px}\
 .sz-foot{margin-top:auto;padding-top:18px;text-align:center;font-size:12px;color:#6b7280}\
 .sz-lock{display:inline-flex;align-items:center;gap:6px}\
-.sz-below{width:960px;max-width:100%;text-align:center;color:rgba(255,255,255,.85);font-size:11px;margin-top:10px}\
+.sz-below{width:960px;max-width:100%;text-align:center;color:rgba(255,255,255,.85);font-size:11px;margin-top:10px;margin-bottom:auto}\
 .sz-spin{display:inline-block;width:14px;height:14px;border:2px solid #3370e3;border-right-color:transparent;border-radius:50%;animation:sz-r .7s linear infinite;margin-left:auto}\
 @keyframes sz-r{to{transform:rotate(360deg)}}\
-@media (max-width:820px){.sz-modal{flex-direction:column;min-height:0}.sz-right{flex:none}.sz-photo{height:180px}.sz-story{padding:16px 12px 8px}.sz-links{display:none}}\
+@media (max-width:820px){.sz-backdrop{padding:16px 8px 24px}.sz-modal{flex-direction:column;min-height:0;gap:0;border-radius:16px}.sz-photo{height:auto;aspect-ratio:1.72;border-radius:12px}.sz-story{padding:28px 12px 20px}.sz-logo{width:34px;margin-bottom:22px}.sz-story h2{font-size:20px;margin-bottom:10px}.sz-story p{font-size:16px;line-height:1.4}.sz-links{display:block;padding-top:16px}.sz-right{flex:none;border:0;border-top:1px solid #e5e7eb;border-radius:0;box-shadow:none;padding:24px 12px 12px}.sz-secure{font-size:20px;margin-bottom:18px}.sz-secure svg{width:28px;height:28px}.sz-ask{font-size:16px}.sz-cur{padding:10px}.sz-cur.sz-picked{padding:9px}.sz-flag{font-size:18px}.sz-close{top:12px;right:12px;width:32px;height:32px;line-height:32px;font-size:22px;background:#f3f4f6;color:#4b5563;box-shadow:none}.sz-below{margin-top:16px;font-size:12px}}\
 @media (prefers-reduced-motion:reduce){.sz-backdrop,.sz-modal,.sz-modal.sz-out{transition:none}}";
 
   var SHIELD = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2.5 4 5.5v6c0 4.7 3.3 8.9 8 10 4.7-1.1 8-5.3 8-10v-6l-8-3Z" stroke="#12b886" stroke-width="2" stroke-linejoin="round"/><rect x="9" y="10.5" width="6" height="5" rx="1" fill="#12b886"/><path d="M10.2 10.5V9.2a1.8 1.8 0 0 1 3.6 0v1.3" stroke="#12b886" stroke-width="1.6"/></svg>';
