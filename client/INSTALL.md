@@ -10,7 +10,8 @@ It takes about 30 minutes: upload three files, add one line to your site's `<hea
 
 ## 1. What to download
 
-Everything is in the `client/` folder of the repository:
+Everything is in the `client/` folder of this repository:
+https://github.com/Sean-Staggs/roomtoread-currency-demo/tree/main/client
 
 | File | What it is |
 |---|---|
@@ -18,6 +19,13 @@ Everything is in the `client/` folder of the repository:
 | `images/picker-photo.jpg` | The photo on the left side of the window (1200px wide). |
 | `images/logo-160.png` | Your logo for the window. |
 | `INSTALL.md` | This guide. |
+
+To download them, use either method:
+
+- **Everything at once:** on the repository's main page, https://github.com/Sean-Staggs/roomtoread-currency-demo, click the green **Code** button, then **Download ZIP**. Unzip it and open the `client` folder. You don't need anything outside that folder.
+- **One file at a time:** open a file in the `client` folder on GitHub, then click the **Download raw file** button (the downward arrow, top right of the file).
+
+You don't need a GitHub account for either method.
 
 You can swap in your own photo or logo. Any landscape photo at least 1000px wide works.
 
